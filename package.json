@@ -1,0 +1,30 @@
+{
+  "name": "fluid-sim-webgpu",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Final project of Advanced Digital Design",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/werifu/Fluid-sim-WebGPU.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/werifu/Fluid-sim-WebGPU/issues"
+  },
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@webgpu/types": "^0.1.39",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/w3c-generic-sensor": "^1.0.9",
+    "@vitejs/plugin-basic-ssl": "^1.0.2"
+  }
+}

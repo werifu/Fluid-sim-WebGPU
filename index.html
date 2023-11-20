@@ -1,89 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Demo</title>
-    <style>
-      canvas {
-        border: 1px solid black;
-      }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluid-Sim</title>
   </head>
   <body>
-    <h1>Demo</h1>
-    <p id="fps">FPS:</p>
-    <p>Real-time accelerometer sensor data:</p>
-    <p id="accx">X:</p>
-    <p id="accy">Y:</p>
-    <!-- <p id="accz">Z:</p> -->
-    <p id="vx">vX:</p>
-    <p id="vy">vY:</p>
-    <!-- <p id="vz">vZ:</p> -->
-    <canvas id="canvas" width="800" height="800"></canvas>
-
-    <script>
-      let lastTimestamp = new Date().getTime();
-      var canvas = document.getElementById('canvas');
-      var ctx = canvas.getContext('2d');
-      var x = canvas.width / 2;
-      var y = canvas.height / 2;
-      let vx = 0;
-      let vy = 0;
-
-      function drawBall(posX, posY) {
-        const radius = 10;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.beginPath();
-        ctx.arc(posX, posY, radius, 0, 2 * Math.PI, false);
-        ctx.fillStyle = 'green';
-        ctx.fill();
-        ctx.lineWidth = 5;
-        ctx.strokeStyle = '#003300';
-        ctx.stroke();
-      }
-      window.addEventListener(
-        'devicemotion',
-        (event) => {
-          const t = new Date().getTime() - lastTimestamp;
-          document.getElementById('fps').innerHTML =
-            'FPS: ' + (1000 / t).toFixed(1);
-          lastTimestamp = new Date().getTime();
-          const acc = event.accelerationIncludingGravity;
-          const accX = -acc.x.toFixed(2);
-          const accY = acc.y.toFixed(2);
-          // const accZ = acc.z.toFixed(2);
-          document.getElementById('accx').innerHTML = 'accX: ' + accX;
-          document.getElementById('accy').innerHTML = 'accY: ' + accY;
-          // document.getElementById('accz').innerHTML = 'accZ: ' + accZ;
-          vx = vx + (t / 25) * accX;
-          vy = vy + (t / 25) * accY;
-          // vz = vz + (t / 1000) * accZ;
-          document.getElementById('vx').innerHTML = 'vX: ' + vx;
-          document.getElementById('vy').innerHTML = 'vY: ' + vy;
-          // document.getElementById('vz').innerHTML = 'vZ: ' + vz;
-
-          x = x + (t / 1000) * vx;
-          y = y + (t / 1000) * vy;
-          // z = z + (t / 1000) * vz;
-
-          if (x < 0) {
-            x = -x;
-            vx = -vx * 0.8;
-          } else if (x >= canvas.width) {
-            x = 2 * canvas.width - x;
-            vx = -vx * 0.8;
-          }
-          if (y < 0) {
-            y = -y;
-            vy = -vy * 0.8;
-          } else if (y >= canvas.height) {
-            y = 2 * canvas.height - y;
-            vy = -vy * 0.8;
-          }
-          drawBall(x, y);
-        },
-        true
-      );
-    </script>
+    <canvas id="container" width="800" height="600"></canvas>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
