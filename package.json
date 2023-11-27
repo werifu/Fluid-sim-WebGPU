@@ -21,7 +21,6 @@
   "devDependencies": {
     "@types/dat.gui": "^0.7.12",
     "@webgpu/types": "^0.1.39",
-    "@rollup/rollup-darwin-arm64": "^4.6.0",
     "dat.gui": "^0.7.9",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
