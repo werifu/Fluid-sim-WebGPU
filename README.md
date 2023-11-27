@@ -14,5 +14,3 @@ npm run dev
 
 https://werifu.github.io/Fluid-sim-WebGPU/
 
-## Reference
-

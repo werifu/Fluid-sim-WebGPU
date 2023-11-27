@@ -7,8 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fluid-Sim</title>
   </head>
+  <style>
+    html {
+      background-color: black;
+    }
+    canvas {
+      overflow: hidden;
+    }
+  </style>
   <body>
-    <canvas id="container" width="800" height="600"></canvas>
+    <canvas id="container"></canvas>
     <div id="app"></div>
     <div id="bebug"></div>
     <script type="module" src="/src/main.ts"></script>

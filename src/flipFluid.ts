@@ -126,9 +126,6 @@ export class FlipFluid {
     this.cellType = new Int32Array(this.fNumCells);
     this.cellColor = new Float32Array(3 * this.fNumCells);
 
-    // particles
-
-
 
     // positions of each particle (x, y)
     this.particlePos = new Float32Array(2 * this.maxParticles);
@@ -310,19 +307,7 @@ export class FlipFluid {
       var x = this.particlePos[2 * i];
       var y = this.particlePos[2 * i + 1];
 
-      // var dx = x - obstacleX;
-      // var dy = y - obstacleY;
-      // var d2 = dx * dx + dy * dy;
-
-      // obstacle collision
-
-      // if (d2 < minDist2) {
-      //   this.particleVel[2 * i] = scene.obstacleVelX;
-      //   this.particleVel[2 * i + 1] = scene.obstacleVelY;
-      // }
-
       // wall collisions
-
       if (x < minX) {
         x = minX;
         this.particleVel[2 * i] = 0.0;

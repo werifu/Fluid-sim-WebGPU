@@ -4,8 +4,8 @@ import { Scene } from "./scene";
 import { createShader, meshFragmentShader, meshVertexShader, pointFragmentShader, pointVertexShader } from "./shaders";
 
 async function main() {
-  window.scrollTo(0, 1);
-  const app = document.querySelector<HTMLDivElement>('#app')!;
+  // window.scrollTo(0, 1);
+  // const app = document.querySelector<HTMLDivElement>('#app')!;
   const canvas = document.querySelector<HTMLCanvasElement>('#container')!;
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -126,7 +126,7 @@ async function main() {
     acl.x = event.accelerationIncludingGravity?.x!;
     acl.y = event.accelerationIncludingGravity?.y!;
     const screenAngle = screen.orientation.angle;
-    app.innerText = `aclX: ${acl.x}\naclY:${acl.y}\n`;
+    // app.innerText = `aclX: ${acl.x}\naclY:${acl.y}\n`;
     if (screenAngle == 0) {
       scene.gravity = {
         x: -acl.x,
