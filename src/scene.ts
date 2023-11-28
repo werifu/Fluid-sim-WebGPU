@@ -37,7 +37,7 @@ export class Scene {
     this.numParticleIters = 2;
     this.overRelaxation = 1.9;
     this.compensateDrift = true;
-    this.separateParticles = true;
+    this.separateParticles = false;
     this.fluid = new FlipFluid({
       density: 0,
       simWidth: 0,

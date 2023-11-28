@@ -636,7 +636,7 @@ export class FlipFluid {
 
     for (let step = 0; step < numSubSteps; step++) {
       this.integrateParticles(sdt, gravity);
-      if (separateParticles)
+      if (!separateParticles)
         this.pushParticlesApart(numParticleIters);
       this.handleParticleCollisions();
       this.transferVelocities(true, flipRatio);

@@ -33,3 +33,24 @@ export function setupGUI(scene: Scene) {
   });
   // gui.add(scene, 'dynNumY', 0, 200);
 }
+
+export function showFPS(fps: number) {
+  let fpsDiv = document.querySelector<HTMLDivElement>('#fps');
+  if (!fpsDiv) {
+    fpsDiv = document.createElement('div');
+    document.body.appendChild(fpsDiv);
+  }
+  fpsDiv.id = 'fps';
+  fpsDiv.style.position = 'fixed';
+  fpsDiv.style.top = '0';
+  fpsDiv.style.left = '0';
+
+  fpsDiv.innerHTML = 'FPS: ' + fps.toFixed(1);
+  if (fps > 45) {
+    fpsDiv.style.color = 'green';
+  } else if (fps >= 30 && fps <= 45) {
+    fpsDiv.style.color = 'yellow';
+  } else {
+    fpsDiv.style.color = 'red';
+  }
+}

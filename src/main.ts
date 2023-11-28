@@ -1,5 +1,5 @@
 import { Acceleration } from "./accelerometer";
-import { setupGUI } from "./gui";
+import { setupGUI, showFPS } from "./gui";
 import { Scene } from "./scene";
 import { createShader, meshFragmentShader, meshVertexShader, pointFragmentShader, pointVertexShader } from "./shaders";
 
@@ -233,7 +233,14 @@ async function main() {
     scene.fluid.simulate(scene);
   }
 
+  let lastTime = new Date().getTime();
   function update() {
+    // calculate fps
+    let now = new Date().getTime();
+    const fps = 1000.0 / (now - lastTime);
+    lastTime = now;
+    showFPS(fps);
+
     simulate();
     draw();
     requestAnimationFrame(update);
