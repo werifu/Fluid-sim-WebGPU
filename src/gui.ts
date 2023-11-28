@@ -1,6 +1,6 @@
 import { GUI } from 'dat.gui';
 import { Scene } from './scene';
-import { FlipFluid } from './flipFluid';
+import { Fluid } from './fluid';
 
 function getRenewFluidFn(scene: Scene) {
   return () => {
@@ -13,7 +13,7 @@ function getRenewFluidFn(scene: Scene) {
       dynNumX,
       dynNumY,
     } = scene;
-    scene.fluid = new FlipFluid({ density, simWidth, simHeight, spacing, particleRadius, dynNumX, dynNumY });
+    scene.fluid = new Fluid({ density, simWidth, simHeight, spacing, particleRadius, dynNumX, dynNumY });
   }
 }
 export function setupGUI(scene: Scene) {

@@ -1,5 +1,5 @@
 // setup scene
-import { FlipFluid } from "./flipFluid";
+import { Fluid } from "./fluid";
 
 export interface Acceleration {
   x: number,
@@ -22,7 +22,7 @@ export class Scene {
   public overRelaxation: number;
   public compensateDrift: boolean;
   public separateParticles: boolean;
-  public fluid: FlipFluid;
+  public fluid: Fluid;
   public simWidth: number;
   public simHeight: number;
   public spacing: number;
@@ -43,7 +43,7 @@ export class Scene {
     this.overRelaxation = 1.9;
     this.compensateDrift = true;
     this.separateParticles = false;
-    this.fluid = new FlipFluid({
+    this.fluid = new Fluid({
       density: 0,
       simWidth: 0,
       simHeight: 0,
@@ -85,7 +85,7 @@ export class Scene {
     const particleRadius = opts.particleRadius ?? 0.3 * spacing;  // particle radius w.r.t. cell size
     this.particleRadius = particleRadius;
     // create fluid
-    this.fluid = new FlipFluid({
+    this.fluid = new Fluid({
       density, simWidth, simHeight, spacing, particleRadius,
       dynNumX: 100, dynNumY: 100
     });

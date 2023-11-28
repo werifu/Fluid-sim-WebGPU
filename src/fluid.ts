@@ -23,7 +23,7 @@ function clamp(x: number, min: number, max: number) {
     return x;
 }
 
-export class FlipFluid {
+export class Fluid {
   public density: number;
   public fNumX!: number;
   public fNumY!: number;
