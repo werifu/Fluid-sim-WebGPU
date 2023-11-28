@@ -1,6 +1,5 @@
-import { Acceleration } from "./accelerometer";
 import { setupGUI, showFPS } from "./gui";
-import { Scene } from "./scene";
+import { Acceleration, Scene } from "./scene";
 import { createShader, meshFragmentShader, meshVertexShader, pointFragmentShader, pointVertexShader } from "./shaders";
 
 

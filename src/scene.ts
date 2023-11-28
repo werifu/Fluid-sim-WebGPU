@@ -1,7 +1,11 @@
 // setup scene
-
-import { Acceleration } from "./accelerometer";
 import { FlipFluid } from "./flipFluid";
+
+export interface Acceleration {
+  x: number,
+  y: number
+}
+
 export interface SceneOptions {
   simWidth: number,
   simHeight: number,
