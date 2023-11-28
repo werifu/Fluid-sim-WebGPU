@@ -6,6 +6,7 @@ export interface SceneOptions {
   simWidth: number,
   simHeight: number,
   density?: number,
+  particleRadius?: number,
 }
 
 export class Scene {
@@ -77,7 +78,7 @@ export class Scene {
     const density = opts.density ?? 1000.0;
     this.density = density;
     // compute number of particles
-    const particleRadius = 0.3 * spacing;  // particle radius w.r.t. cell size
+    const particleRadius = opts.particleRadius ?? 0.3 * spacing;  // particle radius w.r.t. cell size
     this.particleRadius = particleRadius;
     // create fluid
     this.fluid = new FlipFluid({

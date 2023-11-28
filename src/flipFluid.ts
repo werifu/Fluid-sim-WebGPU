@@ -578,8 +578,10 @@ export class FlipFluid {
 
       if (d0 > 0.0) {
         var relDensity = this.particleDensity[cellNr] / d0;
-        if (relDensity < 0.7) {
-          var s = 0.8;
+        const thresholdRadius = this.particleRadius;
+        // console.log(d0)
+        if (relDensity < 0.0001 / (thresholdRadius * thresholdRadius)) {
+          var s = 0.9;
           this.particleColor[3 * i] = s;
           this.particleColor[3 * i + 1] = s;
           this.particleColor[3 * i + 2] = 1.0;
