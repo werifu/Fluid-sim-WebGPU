@@ -12,5 +12,6 @@ npm run dev
 
 ## DEMO
 
-https://werifu.github.io/Fluid-sim-WebGPU/
+https://werifu.github.io/Fluid-sim-accelerometer
+
 
